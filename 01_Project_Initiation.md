@@ -34,14 +34,38 @@ incremental revenue or improving customer retention.
 - Real-world customer survey
 - Production financial implementation
 
-## 4. Stakeholders
+## 4. Stakeholders and Assumptions
 
-- Customers
-- Marketing
-- Finance
-- IT
-- Store Operations
-- Management
+### Key Stakeholder Groups
+
+| Stakeholder | Expected Responsibility |
+|---|---|
+| Business/Product Manager | Define business objectives and approve proposed changes |
+| Loyalty Program Team | Review loyalty rules, rewards, and member engagement |
+| Data Analyst / BI Analyst | Analyze customer activity and monitor KPIs |
+| Development / QA Team | Validate redemption rules and test system behavior |
+| Customer Support Team | Share common loyalty-related customer issues |
+
+### Stakeholder Assumptions
+
+This project is a simulated Business Analyst portfolio case study. The stakeholder groups listed above represent expected participants in a real-world loyalty program improvement initiative.
+
+No actual stakeholder interviews, production-system investigations, or formal business approvals are claimed as part of this case study.
+
+The proposed requirements and recommendations should be reviewed and validated with relevant stakeholders before implementation.
+
+### Business Analyst's Role
+
+The BA role in this case study includes:
+
+- Defining the business problem and project objectives.
+- Analyzing the available customer and loyalty data.
+- Documenting the current-state process and potential improvement areas.
+- Defining proposed requirements and measurable KPIs.
+- Preparing UAT scenarios to validate loyalty program functionality.
+- Presenting recommendations for stakeholder review.
+
+**Expected outcome:** A documented, testable improvement proposal for the loyalty program, rather than a claim of completed implementation or measured business impact.
 
 ## 5. Key Business Questions
 
@@ -51,14 +75,7 @@ incremental revenue or improving customer retention.
 - Does loyalty membership increase repeat purchases?
 - Is the current program generating sufficient business value?
 
-## 6. Assumptions
-
-- Customers can enroll in the loyalty program.
-- Customers earn points through eligible purchases.
-- Customers can redeem points for rewards.
-- Customer, transaction and loyalty data are available.
-
-## 7. Expected Outcome
+## 6. Expected Outcome
 
 A redesigned loyalty program with clearly defined customer
 requirements, improved processes, measurable KPIs and a
