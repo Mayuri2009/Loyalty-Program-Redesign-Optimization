@@ -40,6 +40,31 @@ The UAT covers the following business functions:
 - **NOT RUN:** The test has not yet been executed.
 
 ---
+## 3.1 Additional Negative and Boundary Test Cases
+
+The following test cases extend the existing UAT coverage by checking exceptional conditions and transaction accuracy.
+
+**Note:** These are proposed test scenarios. They should be marked as NOT RUN until actually executed in an appropriate test environment.
+
+| Test Case ID | Test Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| UAT-006 | Attempt redemption when the customer has exactly the minimum required points. | Redemption succeeds if the customer meets all eligibility rules, and the correct points are deducted. | Not executed. | NOT RUN |
+| UAT-007 | Attempt redemption when the customer has fewer points than required. | Redemption is rejected, the points balance remains unchanged, and an appropriate message is displayed. | Not executed. | NOT RUN |
+| UAT-008 | Submit the same redemption request twice. | The system prevents duplicate processing and deducts points only once. | Not executed. | NOT RUN |
+| UAT-009 | Process a refund or cancellation for an eligible purchase. | Points are adjusted according to the documented loyalty business rules, and the transaction history remains accurate. | Not executed. | NOT RUN |
+
+### Additional Validation Notes
+
+- UAT-006 validates behavior at the minimum eligibility boundary.
+- UAT-007 validates rejection when the points balance is insufficient.
+- UAT-008 validates duplicate-redemption protection.
+- UAT-009 validates consistency between refunds, cancellations, and loyalty-point adjustments.
+
+Before execution, the relevant business rules must be confirmed, particularly for refund-related point adjustments.
+
+Any failed test should be recorded in the defect log, linked to the relevant requirement, corrected, and retested.
+
+These additional cases demonstrate proposed test coverage and must not be presented as successfully executed tests without supporting evidence.  
 
 ## 4. Defect Log
 
