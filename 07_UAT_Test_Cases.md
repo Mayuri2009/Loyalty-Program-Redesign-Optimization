@@ -1,75 +1,133 @@
-# UAT — Loyalty Program Redesign
+# Loyalty Program Redesign & Optimization — UAT Test Cases
 
-## 1. Objective
+## 1. Purpose
 
-The objective of UAT is to verify that the proposed loyalty
-program functionality meets the defined business requirements
-and acceptance criteria.
+The purpose of User Acceptance Testing (UAT) is to verify whether the proposed loyalty program solution meets the defined business requirements and works as expected from the customer's perspective.
 
-## 2. UAT Test Cases
+This document defines test scenarios, expected results, actual results, test status, and defect tracking.
 
-| Test ID | Requirement | Test Scenario | Expected Result | Status |
-|----------|-------------|---------------|-----------------|--------|
-| TC-001 | FR-002 | View points balance | Correct balance displayed | PASS |
-| TC-002 | FR-003 | View available rewards | Rewards and required points displayed | PASS |
-| TC-003 | FR-004 | Redeem eligible reward | Reward confirmed and points deducted | PASS |
-| TC-004 | FR-005 | Apply reward at checkout | Reward correctly applied | PASS |
-| TC-005 | FR-007 | Open KPI dashboard | Required KPIs displayed | PASS |
+**Note:** This is a simulated portfolio project. The test scenarios and results are illustrative and do not represent testing of a live production system.
 
-## 3. Detailed UAT Example
+---
 
-### TC-003 — Redeem Eligible Reward
+## 2. UAT Scope
 
-#### Preconditions
+The UAT covers the following business functions:
 
-- Customer has a valid loyalty account.
-- Customer has enough points.
-- Reward is available.
+- Viewing loyalty points balance
+- Redeeming loyalty points
+- Validating reward eligibility
+- Preventing incorrect point deductions
+- Reviewing loyalty program information
 
-#### Test Steps
+---
 
-1. Open loyalty account.
-2. View available rewards.
-3. Select eligible reward.
-4. Click Redeem.
-5. Confirm redemption.
+## 3. UAT Test Cases
 
-#### Expected Result
+| Test Case ID | Test Scenario | Expected Result | Illustrative Actual Result | Status |
+|---|---|---|---|---|
+| UAT-001 | View loyalty points balance | The customer sees the correct available points balance. | The displayed balance matches the recorded balance. | PASS |
+| UAT-002 | Redeem eligible loyalty points | The correct number of points is deducted after successful redemption. | An incorrect number of points is deducted in the illustrative scenario. | FAIL |
+| UAT-003 | Attempt redemption with insufficient points | The system prevents redemption and displays an appropriate message. | Redemption is blocked when the balance is insufficient. | PASS |
+| UAT-004 | Attempt to redeem an expired or unavailable reward | The system prevents redemption of an ineligible reward. | The ineligible reward cannot be redeemed. | PASS |
+| UAT-005 | Review loyalty transaction history | The customer can view the relevant loyalty transaction details. | The transaction history displays the recorded details. | PASS |
 
-Reward redemption is confirmed and the required points
-are deducted from the customer's balance.
+**Status definitions:**
 
-#### Actual Result
+- **PASS:** The observed result meets the expected result.
+- **FAIL:** The observed result does not meet the expected result.
+- **BLOCKED:** Testing cannot proceed because of a dependency or unresolved issue.
+- **NOT RUN:** The test has not yet been executed.
 
-Reward successfully redeemed and required points deducted.
+---
 
-#### Status
+## 4. Defect Log
 
-PASS
+| Defect ID | Related Test Case | Defect Description | Severity | Status |
+|---|---|---|---|---|
+| DEF-001 | UAT-002 | The system deducts an incorrect number of loyalty points during redemption. | High | Open |
 
-## 4. Example Defect
+### Defect Details
 
-### DEF-001
+**Expected behavior:** The system should deduct only the eligible number of points required for the selected redemption.
 
-Issue:
-Incorrect points deduction during reward redemption.
+**Observed behavior:** The illustrative test scenario records an incorrect points deduction.
 
-Expected:
-1,000 points deducted.
+**Business impact:** Incorrect deductions can reduce customer trust, create complaints, and lead to loyalty balance disputes.
 
-Actual:
-1,500 points deducted.
+**Required corrective action:**
 
-Severity:
-High
+1. Investigate the points calculation and redemption rules.
+2. Correct the calculation or business logic.
+3. Retest the affected redemption scenario.
+4. Verify that the updated points balance is accurate.
+5. Record the retest result and close the defect only after successful verification.
 
-Status:
-Open
+---
 
-## 5. UAT Sign-Off
+## 5. UAT Entry and Exit Criteria
 
-UAT Status: ACCEPTED
+### Entry Criteria
 
-The tested functionality meets the defined acceptance
-criteria for the current release. No critical outstanding
-defects remain.
+- Business requirements and acceptance criteria are documented.
+- Test scenarios are prepared and reviewed.
+- Test data and the required test environment are available.
+- Expected results are defined for each test case.
+
+### Exit Criteria
+
+- All required test cases have been executed.
+- Failed test cases have been investigated.
+- High-severity defects have been resolved and successfully retested.
+- Test evidence and defect status are documented.
+- The appropriate business representative reviews the results and records the acceptance decision.
+
+---
+
+## 6. Overall UAT Status
+
+**Current illustrative status: Pending Final Acceptance**
+
+UAT cannot be considered fully accepted while DEF-001 remains open and UAT-002 is failing.
+
+Final acceptance should be recorded only after the defect is resolved, the affected test case passes retesting, and the exit criteria are satisfied.
+
+No production implementation or actual business acceptance is claimed in this portfolio project.
+
+---
+
+## 7. UAT Execution and Sign-Off Process
+
+1. Execute the test cases against the documented requirements.
+2. Compare actual results with expected results.
+3. Record PASS, FAIL, BLOCKED, or NOT RUN.
+4. Log defects for failed test cases.
+5. Assign corrective actions and resolve defects.
+6. Retest the affected scenarios and document evidence.
+7. Review the final results against the exit criteria.
+8. Obtain the appropriate business acceptance decision.
+
+### UAT Flow
+
+Requirements → Test Case Preparation → Test Execution → Result Validation → Defect Logging → Correction and Retesting → Final Acceptance Decision
+
+---
+
+## 8. Business Analyst's Responsibility
+
+As a Business Analyst, my responsibilities in the UAT process would include:
+
+- Ensuring test scenarios trace back to business requirements.
+- Confirming that expected results reflect agreed business rules.
+- Helping clarify defects and their business impact.
+- Coordinating with relevant business and technical stakeholders.
+- Maintaining traceability between requirements, test cases, and defects.
+- Supporting retesting and documenting the final acceptance decision.
+
+---
+
+## 9. Conclusion
+
+UAT helps confirm that a proposed loyalty program solution meets business requirements and supports the intended customer experience.
+
+In this illustrative scenario, the incorrect points deduction must be corrected and retested before final acceptance. This demonstrates the importance of defect tracking, requirement validation, and business approval in the Business Analysis lifecycle.
