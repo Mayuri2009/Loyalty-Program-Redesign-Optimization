@@ -102,11 +102,3 @@ The redesigned loyalty program focuses on:
 | UAT | Test Scenarios & Results |
 | KPI Dashboard | Executive Loyalty Dashboard |
 | Final Recommendation | Business Case Summary |
-
----
-
-## ⚠️ Disclaimer
-
-This is a simulated portfolio project created for
-demonstrating Business Analysis skills. The data and
-business scenario do not represent a real organization.
